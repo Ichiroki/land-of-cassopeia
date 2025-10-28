@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SeedData" load_steps=4 format=3 uid="uid://bh3pyem6hmken"]
+
+[ext_resource type="PackedScene" uid="uid://djdsb3lkf2wwk" path="res://core/crops/Corn.tscn" id="1_tdwgs"]
+[ext_resource type="Texture2D" uid="uid://c063nspdsjqt7" path="res://assets/crops/corn/corn-seed.png" id="2_jp7ut"]
+[ext_resource type="Script" uid="uid://blj1j7uwschr0" path="res://scripts/utils/resource/seed_data.gd" id="3_ec4ip"]
+
+[resource]
+script = ExtResource("3_ec4ip")
+crop_scene = ExtResource("1_tdwgs")
+grow_time = 15.0
+item_name = "Corn Seed"
+icon = ExtResource("2_jp7ut")
+description = "Corn seeds that are ready to be besties in your fields"
+price = 0
+item_type = "general"
+item_rarity = "common"
+metadata/_custom_type_script = "uid://blj1j7uwschr0"
