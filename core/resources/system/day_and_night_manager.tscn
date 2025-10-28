@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuygs1e7q3ifc"]
+
+[ext_resource type="Script" uid="uid://q48iauk7k6al" path="res://scripts/system/DayNightManager.gd" id="1_jouy0"]
+
+[node name="DayAndNightManager" type="Node2D"]
+z_index = -5
+script = ExtResource("1_jouy0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

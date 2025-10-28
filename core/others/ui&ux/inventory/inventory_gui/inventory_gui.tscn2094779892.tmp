@@ -1,0 +1,142 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7sb6btg00rnk"]
+
+[ext_resource type="Texture2D" uid="uid://r5kifmgrrpjf" path="res://assets/ui&ux/Windows-9-Sliced.png" id="1_dr564"]
+[ext_resource type="Script" uid="uid://ccv3grymfbeyk" path="res://scripts/ui&ux/inventory_gui.gd" id="1_eau1n"]
+[ext_resource type="PackedScene" uid="uid://dp81o01rdfy8f" path="res://core/others/ui&ux/inventory_slot_gui.tscn" id="2_geq6s"]
+
+[node name="InventoryGUI" type="Control"]
+z_index = 29
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -219.0
+offset_right = -168.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+mouse_filter = 2
+script = ExtResource("1_eau1n")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dr564")
+region_rect = Rect2(208, 16, 48, 48)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -36.5
+offset_right = 41.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 22
+theme_override_constants/v_separation = 18
+columns = 4
+
+[node name="InventorySlotGUI" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI13" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI14" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="InventorySlotGUI16" parent="NinePatchRect/GridContainer" instance=ExtResource("2_geq6s")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+z_index = 999
+layout_mode = 0
+offset_left = 93.0
+offset_top = -4.9
+offset_right = 109.0
+offset_bottom = 11.1
+scale = Vector2(0.85, 0.85)
+mouse_force_pass_scroll_events = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dr564")
+region_rect = Rect2(208, 16, 48, 48)
+
+[node name="Label" type="Label" parent="Button/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.705882
+offset_top = -2.35294
+offset_right = 0.705883
+offset_bottom = 1.64706
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

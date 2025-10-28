@@ -1,0 +1,95 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=22 format=3 uid="uid://brh3o1wprqeed"]
+
+[ext_resource type="Script" uid="uid://dw6grkxbge0rx" path="res://scripts/utils/resource/inventory_slot.gd" id="2_3obgk"]
+[ext_resource type="Resource" uid="uid://b52m3x1e05xiy" path="res://core/resources/items/vegetable_fruit/apple_item.tres" id="3_f7u5o"]
+[ext_resource type="Resource" uid="uid://db8368hbcml5s" path="res://core/resources/items/vegetable_fruit/corn_item.tres" id="4_g5sds"]
+[ext_resource type="Script" uid="uid://dhop6jsushi5v" path="res://scripts/utils/resource/inventory.gd" id="4_vw2re"]
+[ext_resource type="Resource" uid="uid://d3n0oit8ukdyt" path="res://core/crops/seed/apple_seed.tres" id="5_judnq"]
+
+[sub_resource type="Resource" id="Resource_8fiq6"]
+script = ExtResource("2_3obgk")
+item = ExtResource("3_f7u5o")
+amount = 5
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_g5m3t"]
+script = ExtResource("2_3obgk")
+item = ExtResource("4_g5sds")
+amount = 10
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_2axuu"]
+script = ExtResource("2_3obgk")
+item = ExtResource("5_judnq")
+amount = 5
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_vw2re"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_2xhbc"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_ntk7a"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_m00ae"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_bifx7"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_1hkmr"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_haja4"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_4qm47"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_7p4x8"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_3mjll"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_yww4j"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_8g8jn"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[sub_resource type="Resource" id="Resource_g5sds"]
+script = ExtResource("2_3obgk")
+amount = 0
+metadata/_custom_type_script = "uid://dw6grkxbge0rx"
+
+[resource]
+script = ExtResource("4_vw2re")
+slots = Array[ExtResource("2_3obgk")]([SubResource("Resource_8fiq6"), SubResource("Resource_g5m3t"), SubResource("Resource_2axuu"), SubResource("Resource_vw2re"), SubResource("Resource_2xhbc"), SubResource("Resource_ntk7a"), SubResource("Resource_m00ae"), SubResource("Resource_bifx7"), SubResource("Resource_1hkmr"), SubResource("Resource_haja4"), SubResource("Resource_4qm47"), SubResource("Resource_7p4x8"), SubResource("Resource_3mjll"), SubResource("Resource_yww4j"), SubResource("Resource_8g8jn"), SubResource("Resource_g5sds")])
+metadata/_custom_type_script = "uid://dhop6jsushi5v"

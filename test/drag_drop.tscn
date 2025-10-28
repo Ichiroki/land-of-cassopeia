@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwl5adib801ay"]
+
+[ext_resource type="Texture2D" uid="uid://c063nspdsjqt7" path="res://assets/crops/corn/corn-seed.png" id="1_f8jga"]
+[ext_resource type="Script" uid="uid://bj7m6nxgv0khv" path="res://test.gd" id="2_vx6or"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 278.0
+offset_top = 191.0
+offset_right = 398.0
+offset_bottom = 311.0
+texture = ExtResource("1_f8jga")
+expand_mode = 1
+script = ExtResource("2_vx6or")
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 766.0
+offset_top = 191.0
+offset_right = 886.0
+offset_bottom = 311.0
+expand_mode = 1
+script = ExtResource("2_vx6or")
+
+[node name="Panel" type="Panel" parent="TextureRect2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

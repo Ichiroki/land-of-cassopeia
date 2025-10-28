@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SeedData" load_steps=4 format=3 uid="uid://d3n0oit8ukdyt"]
+
+[ext_resource type="PackedScene" uid="uid://bpme0523deo1g" path="res://core/crops/Apple.tscn" id="1_csbmn"]
+[ext_resource type="Texture2D" uid="uid://tlpkuyd21ehs" path="res://assets/crops/apple/apple-seed.png" id="2_o7bu5"]
+[ext_resource type="Script" uid="uid://blj1j7uwschr0" path="res://scripts/utils/resource/seed_data.gd" id="3_cx6uh"]
+
+[resource]
+script = ExtResource("3_cx6uh")
+crop_scene = ExtResource("1_csbmn")
+grow_time = 30.0
+item_name = "Apple Seed"
+icon = ExtResource("2_o7bu5")
+description = "A small apple seed is said to grow into a sweet tree with love and a little luck. But don't be surprised if it ends up growing in the middle of the road."
+price = 20
+item_type = "seed"
+item_rarity = "common"
+metadata/_custom_type_script = "uid://blj1j7uwschr0"

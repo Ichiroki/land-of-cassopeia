@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemsData" load_steps=3 format=3 uid="uid://db8368hbcml5s"]
+
+[ext_resource type="Texture2D" uid="uid://dxtvwehitpa0l" path="res://assets/objects/corn_item.png" id="1_564j0"]
+[ext_resource type="Script" uid="uid://dywfdhbjebr8h" path="res://scripts/utils/resource/items_data.gd" id="2_jkacq"]
+
+[resource]
+script = ExtResource("2_jkacq")
+item_name = "Corn"
+icon = ExtResource("1_564j0")
+description = "Everything seems not good before corn shows up, can be grilled ? can be combine with another food ? nah, corn can do that all. it depends on you"
+price = 7
+item_type = "general"
+item_rarity = "common"
+metadata/_custom_type_script = "uid://dywfdhbjebr8h"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemsData" load_steps=3 format=3 uid="uid://b52m3x1e05xiy"]
+
+[ext_resource type="Texture2D" uid="uid://buywr1d5xm8cx" path="res://assets/objects/apple_item.png" id="1_te17l"]
+[ext_resource type="Script" uid="uid://dywfdhbjebr8h" path="res://scripts/utils/resource/items_data.gd" id="2_vamor"]
+
+[resource]
+script = ExtResource("2_vamor")
+item_name = "Apple"
+icon = ExtResource("1_te17l")
+description = "A fresh fruit that's always a favorite among villagers. It's sweet, but can be a bit sour if harvested prematurely. Eating one can brighten up your day."
+price = 10
+item_type = "general"
+item_rarity = "rare"
+metadata/_custom_type_script = "uid://dywfdhbjebr8h"

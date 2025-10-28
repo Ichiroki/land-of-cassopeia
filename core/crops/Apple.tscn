@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpme0523deo1g"]
+
+[ext_resource type="PackedScene" uid="uid://d3lhuqi4ifght" path="res://core/others/farm/crop.tscn" id="1_1d1xj"]
+[ext_resource type="Script" uid="uid://dwiyx2jjxqmhq" path="res://scripts/crops/apple.gd" id="2_8jqr4"]
+[ext_resource type="Texture2D" uid="uid://brrue3tbv1gcr" path="res://assets/crops/apple/apple_stage_1.png" id="3_5uqyf"]
+[ext_resource type="Resource" uid="uid://b52m3x1e05xiy" path="res://core/resources/items/vegetable_fruit/apple_item.tres" id="3_84so0"]
+[ext_resource type="Texture2D" uid="uid://cxjaf6lttg1nw" path="res://assets/crops/apple/apple_stage_2.png" id="4_84so0"]
+[ext_resource type="Texture2D" uid="uid://dqxc8b51p1vnf" path="res://assets/crops/apple/apple_stage_3.png" id="5_c4vgi"]
+[ext_resource type="Texture2D" uid="uid://d35plv1xni6fo" path="res://assets/crops/apple/apple_stage_4.png" id="6_f4kh0"]
+[ext_resource type="Script" uid="uid://blj1j7uwschr0" path="res://scripts/utils/resource/seed_data.gd" id="7_84so0"]
+
+[sub_resource type="Resource" id="Resource_c4vgi"]
+script = ExtResource("7_84so0")
+grow_time = 0.0
+item_name = ""
+description = ""
+price = 0
+item_type = "general"
+item_rarity = "common"
+metadata/_custom_type_script = "uid://blj1j7uwschr0"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jqr4"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jqr4"]
+size = Vector2(5, 5)
+
+[node name="Apple" groups=["Crop"] instance=ExtResource("1_1d1xj")]
+script = ExtResource("2_8jqr4")
+crop_item = ExtResource("3_84so0")
+growth_stages = Array[Texture2D]([ExtResource("4_84so0"), ExtResource("5_c4vgi"), ExtResource("6_f4kh0")])
+grow_time = 30.0
+crop_data = SubResource("Resource_c4vgi")
+is_ready = true
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_8jqr4")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_8jqr4")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_5uqyf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

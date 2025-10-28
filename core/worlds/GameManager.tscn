@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://celre2re2hp14"]
+
+[ext_resource type="PackedScene" uid="uid://cim101ucrgn1h" path="res://players/player.tscn" id="1_jkvry"]
+[ext_resource type="Script" uid="uid://kbhmb4wtojrv" path="res://scripts/system/GameManager.gd" id="1_u0abw"]
+
+[node name="GameManager" type="Node2D" groups=["GameManager"]]
+script = ExtResource("1_u0abw")
+
+[node name="Player" parent="." instance=ExtResource("1_jkvry")]
+position = Vector2(28, 103)
+
+[node name="WorldHolder" type="Node2D" parent="."]

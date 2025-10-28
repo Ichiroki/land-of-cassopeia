@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://byhfamdxhkmik"]
+
+[ext_resource type="Script" uid="uid://dfmduqw18l1tv" path="res://scripts/animals/chicken.gd" id="1_3ims8"]
+[ext_resource type="Texture2D" uid="uid://cxhvk4kl6w8hs" path="res://assets/sprites/animals/chicken/Free Chicken Sprites.png" id="1_iopdj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ims8"]
+atlas = ExtResource("1_iopdj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnfox"]
+atlas = ExtResource("1_iopdj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vejjy"]
+atlas = ExtResource("1_iopdj")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkwiu"]
+atlas = ExtResource("1_iopdj")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyyye"]
+atlas = ExtResource("1_iopdj")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irql0"]
+atlas = ExtResource("1_iopdj")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bebab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ims8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnfox")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vejjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkwiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyyye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irql0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Chicken" type="Node2D"]
+script = ExtResource("1_3ims8")
+speed = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_bebab")
+animation = &"idle"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
