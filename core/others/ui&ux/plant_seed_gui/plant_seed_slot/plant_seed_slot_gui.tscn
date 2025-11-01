@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://k8lnbr63eqla"]
 
-[ext_resource type="Script" uid="uid://co6e6id4mwyal" path="res://core/others/ui&ux/plant_seed_slot_gui.gd" id="1_h3ryo"]
+[ext_resource type="Script" uid="uid://co6e6id4mwyal" path="res://core/others/ui&ux/plant_seed_gui/plant_seed_slot/plant_seed_slot_gui.gd" id="1_h3ryo"]
 [ext_resource type="Texture2D" uid="uid://r5kifmgrrpjf" path="res://assets/ui&ux/Windows-9-Sliced.png" id="1_jfcil"]
 [ext_resource type="Texture2D" uid="uid://tlpkuyd21ehs" path="res://assets/crops/apple/apple-seed.png" id="3_elp7a"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bf0it01jkb2qt"]
+[gd_scene load_steps=28 format=4 uid="uid://bf0it01jkb2qt"]
 
 [ext_resource type="Script" uid="uid://dpp8h0vh4b4q2" path="res://scripts/world/world_1/world_1.gd" id="1_hqth8"]
 [ext_resource type="Texture2D" uid="uid://caj58pujy75ub" path="res://assets/tilesets/Grass.png" id="2_rdcib"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dknux73b7gc0r" path="res://assets/tilesets/Wood_Bridge.png" id="10_gkbx1"]
 [ext_resource type="Texture2D" uid="uid://csujnkkt17dsm" path="res://assets/objects/Free_Chicken_House.png" id="11_pus2k"]
 [ext_resource type="PackedScene" uid="uid://cnwmi7jycn86i" path="res://core/others/farm/soil.tscn" id="14_ei8b0"]
+[ext_resource type="PackedScene" uid="uid://3drgeg27tkeu" path="res://core/ai/npcs/wolfred/wolfred.tscn" id="14_hqth8"]
 [ext_resource type="PackedScene" uid="uid://cuygs1e7q3ifc" path="res://core/resources/system/day_and_night_manager.tscn" id="15_hqth8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntu2f"]
@@ -597,5 +598,8 @@ position = Vector2(259, 53)
 position = Vector2(259, 27)
 
 [node name="DayAndNightManager" parent="." instance=ExtResource("15_hqth8")]
+
+[node name="Wolfred" parent="." instance=ExtResource("14_hqth8")]
+position = Vector2(60, 372)
 
 [connection signal="body_entered" from="MyHouseArea" to="." method="_on_my_house_area_body_entered"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AIResource" load_steps=2 format=3 uid="uid://dj0ypiet47k0q"]
+
+[ext_resource type="Script" uid="uid://bh1ofgnuosc6w" path="res://core/ai/bot/AIResource.gd" id="1_bxtyn"]
+
+[resource]
+script = ExtResource("1_bxtyn")
+entity_type = "npc"
+bot_name = "Wolfred"
+move_speed = 0.0
+can_interact = true
+can_wander = true
+wander_radius = 0.0
+interact_text = "Hello"
+hostility = "friendly"
+metadata/_custom_type_script = "uid://bh1ofgnuosc6w"

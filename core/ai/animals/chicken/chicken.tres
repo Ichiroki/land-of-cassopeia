@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AIResource" load_steps=2 format=3 uid="uid://cfkguk4gopdnd"]
 
-[ext_resource type="Script" uid="uid://bh1ofgnuosc6w" path="res://core/ai/AIResource.gd" id="1_nl168"]
+[ext_resource type="Script" uid="uid://bh1ofgnuosc6w" path="res://core/ai/bot/AIResource.gd" id="1_nl168"]
 
 [resource]
 script = ExtResource("1_nl168")

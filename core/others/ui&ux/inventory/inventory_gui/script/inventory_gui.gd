@@ -15,11 +15,11 @@ func update_slots():
 		slots[i].update(inventory.slots[i])
 
 func open():
-	self.visible = true
+	visible = true
 	is_open = true
 	
 func close():
-	self.visible = false
+	visible = false
 	is_open = false
 
 func _on_button_pressed() -> void:

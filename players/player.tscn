@@ -281,22 +281,29 @@ script = null
 
 [node name="PlantSeedGUI" parent="PlayerUI" instance=ExtResource("7_l1fvc")]
 
-[node name="Interact" type="TextureRect" parent="PlayerUI"]
-visible = false
-offset_left = -10.0
-offset_top = -31.0
-offset_right = 10.0
-offset_bottom = -11.0
-texture = ExtResource("9_0yn0j")
-
 [node name="Panel" type="Panel" parent="PlayerUI"]
-visible = false
-z_index = 25
+z_index = 100
 offset_left = -10.0
 offset_top = -31.0
 offset_right = 10.0
 offset_bottom = -11.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ogrlw")
+
+[node name="Interact" type="TextureRect" parent="PlayerUI/Panel"]
+visible = false
+z_index = 998
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("9_0yn0j")
+
+[node name="Label" type="Label" parent="PlayerUI/Panel"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 20.0
+offset_bottom = 21.0
+text = "E"
+horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="PlayerUI"]
 visible = false

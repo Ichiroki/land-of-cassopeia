@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://0puoil0nl1k2"]
+
+[ext_resource type="Script" uid="uid://cxsl705d5khyn" path="res://core/ai/npcs/npc.gd" id="1_egwoj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2bgg"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbinj"]
+radius = 13.0
+
+[node name="Npc" type="StaticBody2D"]
+script = ExtResource("1_egwoj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+animation = &""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e2bgg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xbinj")

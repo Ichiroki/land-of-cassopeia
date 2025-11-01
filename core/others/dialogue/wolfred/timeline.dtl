@@ -1,0 +1,14 @@
+join character left
+character: <"Hello!"/"What can i do for you ?"/"What do you need ?"/"Is there anything i can help ?">
+- Trade
+	character: <"If you need supplies, I might have something."/"Take what you need. if the price is fair."/"My goods are simple, but they'll keep you alive out there"/>
+	set {trade_was_opened} = true
+	[signal arg="open_trade"]
+	if {trade_was_opened} == false:
+		character: <"Thanks"/"Thank you"/"Enjoy business with you!"/"Hope you have a nice day">
+		[end_timeline]
+- Talk
+	character: <"Sometimes the wind carries whispers... I listen."/"People thinks the forest are silent. They're wrong."/"The night reveals truths, the sun hides"/"My instintcs say something is changing in this land"/"People proud of the hero, but their minds said otherwise"/"People are scared of the demon, after they banish, now they scared of hero" />
+	jump timeline/
+- Leave
+	[end_timeline]

@@ -63,6 +63,7 @@ func _drop_data(at_position: Vector2, data):
 	source_slot.item_data = temp_data
 	
 	swap_item(source_slot)
+	print(source_slot)
 	update_slot()
 	source_slot.update_slot()
 	

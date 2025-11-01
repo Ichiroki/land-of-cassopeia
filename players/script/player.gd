@@ -6,6 +6,7 @@ var direction := Vector2.ZERO
 
 var nearby_soil: Node = null
 var nearby_crop = null
+var nearby_npc: Node = null
 
 var selected_seed: ItemsData = null
 
@@ -20,6 +21,12 @@ func _physics_process(delta: float) -> void:
 			seed_gui.open()
 		else:
 			seed_gui.close()
+		
+		if nearby_npc:
+			nearby_npc.show_dialogue()
+			#nearby_npc.ai_controller.change_state("interact")
+			
+			#if nearby_crop.state
 		
 		if nearby_crop:
 			nearby_crop.harvest(nearby_crop.crop_item, self)
@@ -72,9 +79,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("start_growth"):
 		nearby_crop = body
 		
+	if body.is_in_group("InteractableNPC"):
+		#$PlayerUI/Panel
+		nearby_npc = body
+		
 	if body.has_method("soil"):
 		nearby_soil = body
-		if not nearby_soil.can_plant :
+		if nearby_soil.can_plant :
 			show_panel()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
@@ -83,10 +94,12 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		nearby_soil = null
 
 func show_panel():
-	$PlayerUI/Interact.visible = true
+	$PlayerUI/Panel.visible = true
+	#$PlayerUI/Interact.visible = true
 	
 func close_panel():
-	$PlayerUI/Interact.visible = false
+	$PlayerUI/Panel.visible = false
+	#$PlayerUI/Interact.visible = false
 
 func start_planting_animation(seed: SeedData):
 	close_panel()

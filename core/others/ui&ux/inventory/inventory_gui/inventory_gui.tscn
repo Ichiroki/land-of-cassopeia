@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dp81o01rdfy8f" path="res://core/others/ui&ux/inventory/inventory_slot/inventory_slot_gui.tscn" id="2_geq6s"]
 
 [node name="InventoryGUI" type="Control"]
-process_mode = 2
+process_mode = 3
 z_index = 29
 layout_mode = 3
 anchors_preset = 8
@@ -150,5 +150,4 @@ text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
