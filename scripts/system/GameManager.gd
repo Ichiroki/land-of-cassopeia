@@ -6,7 +6,7 @@ extends Node2D
 var curr_world: Node = null
 
 func _ready():
-	load_world("res://core/worlds/world_1/world_1.tscn")
+	load_world("res://worlds/world_1/world_1.tscn")
 
 func load_world(path: String):
 	if curr_world: 

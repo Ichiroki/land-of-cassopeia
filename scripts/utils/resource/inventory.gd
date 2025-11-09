@@ -6,6 +6,9 @@ signal update
 
 @export var slots: Array[InventorySlot]
 
+func modify_inventory():
+	emit_signal("update")
+
 func insert(item: ItemsData):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
 	if !itemSlots.is_empty():
@@ -17,24 +20,26 @@ func insert(item: ItemsData):
 			emptySlots[0].amount = 1
 	update.emit()
 	
-func sort_by_name():
-	slots.sort_custom(_compare_item_name)
-	update.emit()
+func to_dict() -> Dictionary:
+	var data = []
+	for slot in slots:
+		if slot.item:
+			data.append({
+				"item_name": slot.item.item_name,
+				"amount": slot.amount
+			})
+		else:
+			data.append(null)
+	return {
+		"slots": data
+	}
 
-func _compare_item_name(a: InventorySlot, b: InventorySlot) -> int:
-	if a.item == null and b.item == null:
-		return 0
-	elif a.item == null:
-		return 1
-	elif b.item == null:
-		return -1
-	else:
-		return a.item.item_name.naturalnocasecmp_to(b.item.item_name)
-		
-func sort_by_price():
-	slots.sort_custom(_compare_item_price)
-
-func _compare_item_price(a: InventorySlot, b: InventorySlot):
-	if a.item == null or b.item == null:
-		return 0
-	return a.item.price - b.item.price
+func from_dict(data: Dictionary, items_db: Dictionary):
+	for i in range(slots.size()):
+		var slot_data = data["slots"][i]
+		if slot_data != null:
+			slots[i].item = items_db[slot_data["item_name"]]
+			slots[i].item = slot_data["amount"]
+		else:
+			slots[i].item = null
+			slots[i].amount = 0

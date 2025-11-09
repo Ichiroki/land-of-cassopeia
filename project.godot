@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="land-of-cassopeia"
-run/main_scene="uid://celre2re2hp14"
+run/main_scene="uid://crb76npbbljus"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 GlobalState="*res://scripts/system/GlobalState.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SaveManager="*res://core/global/SaveManager.gd"
+AudioManager="*res://core/global/AudioManager.gd"
 
 [dialogic]
 

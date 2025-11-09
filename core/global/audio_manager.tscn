@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://11n4qt04t3oh"]
+
+[ext_resource type="Script" uid="uid://b4x6hjpe0a18a" path="res://core/global/AudioManager.gd" id="1_drma0"]
+[ext_resource type="AudioStream" uid="uid://bf4e5emdd4qx0" path="res://assets/sounds/hoverSound.wav" id="2_6bflm"]
+[ext_resource type="AudioStream" uid="uid://c72nxvs0p6frq" path="res://assets/sounds/clickSound.wav" id="3_qebcm"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_drma0")
+hover_sfx = ExtResource("2_6bflm")
+click_sfx = ExtResource("3_qebcm")

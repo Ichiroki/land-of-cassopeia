@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwbumt44g42ih"]
+
+[ext_resource type="PackedScene" uid="uid://cosgiqibnaagy" path="res://entity/ai/bot/AIController.tscn" id="1_gtypp"]
+[ext_resource type="Texture2D" uid="uid://cxhvk4kl6w8hs" path="res://assets/sprites/animals/chicken/Free Chicken Sprites.png" id="4_gy3m2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3puq0"]
+atlas = ExtResource("4_gy3m2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcnnw"]
+atlas = ExtResource("4_gy3m2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uguso"]
+atlas = ExtResource("4_gy3m2")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7gbt"]
+atlas = ExtResource("4_gy3m2")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5po"]
+atlas = ExtResource("4_gy3m2")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj5jp"]
+atlas = ExtResource("4_gy3m2")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf8lt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3puq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcnnw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uguso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7gbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh5po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj5jp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sasu"]
+size = Vector2(11, 11)
+
+[node name="Chicken" instance=ExtResource("1_gtypp")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_uf8lt")
+animation = &"walk"
+
+[node name="StateMachine" parent="." index="2" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("BotIdle")
+
+[node name="BotIdle" parent="StateMachine" index="0" node_paths=PackedStringArray("bot")]
+bot = NodePath("../..")
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_5sasu")

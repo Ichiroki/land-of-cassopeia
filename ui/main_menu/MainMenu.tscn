@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://crb76npbbljus"]
+
+[ext_resource type="Script" uid="uid://bps2vb6a3s4kg" path="res://ui/main_menu/script/main_menu.gd" id="1_blw3s"]
+[ext_resource type="PackedScene" uid="uid://bmh281rifuphs" path="res://component/button_component.tscn" id="1_h7g2k"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_blw3s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" parent="CanvasLayer/Panel" instance=ExtResource("1_h7g2k")]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 480.0
+offset_right = 92.0
+offset_bottom = 496.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+offset_left = 868.0
+offset_top = 57.0
+offset_right = 900.0
+offset_bottom = 133.0
+scale = Vector2(7, 7)
+alignment = 1
+
+[node name="StartGame" parent="CanvasLayer/Panel/VBoxContainer" instance=ExtResource("1_h7g2k")]
+layout_mode = 2
+
+[node name="LoadGame" parent="CanvasLayer/Panel/VBoxContainer" instance=ExtResource("1_h7g2k")]
+layout_mode = 2
+
+[node name="Option" parent="CanvasLayer/Panel/VBoxContainer" instance=ExtResource("1_h7g2k")]
+layout_mode = 2
+
+[node name="QuitGame" parent="CanvasLayer/Panel/VBoxContainer" instance=ExtResource("1_h7g2k")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]

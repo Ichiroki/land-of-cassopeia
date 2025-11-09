@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cosgiqibnaagy"]
+
+[ext_resource type="Script" uid="uid://l74nsoawph7p" path="res://core/ai/bot/ai_controller.gd" id="2_bylcc"]
+[ext_resource type="Script" uid="uid://bp5f5sx0ax5rk" path="res://scripts/States/stateMachine.gd" id="2_n3nfg"]
+[ext_resource type="Script" uid="uid://bg8pp23fmc84l" path="res://scripts/States/botIdle.gd" id="3_bhndh"]
+
+[sub_resource type="GDScript" id="GDScript_7u03s"]
+script/source = "extends CharacterBody2D
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7u03s"]
+animations = []
+
+[node name="EntityBase" type="CharacterBody2D"]
+script = SubResource("GDScript_7u03s")
+
+[node name="AIController" type="Node" parent="."]
+script = ExtResource("2_bylcc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7u03s")
+animation = &""
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_n3nfg")
+
+[node name="BotIdle" type="Node" parent="StateMachine"]
+script = ExtResource("3_bhndh")
+metadata/_custom_type_script = "uid://bg8pp23fmc84l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctffn2ishv66c"]
+
+[ext_resource type="Script" uid="uid://cbonkyeftsmcy" path="res://ui/trade_gui/player_slot/player_slot.gd" id="1_3wv4p"]
+[ext_resource type="Texture2D" uid="uid://r5kifmgrrpjf" path="res://assets/ui&ux/Windows-9-Sliced.png" id="1_hp76f"]
+[ext_resource type="FontFile" uid="uid://dfhxcaon84qtr" path="res://assets/fonts/PixeloidMono.ttf" id="3_3wv4p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elp7a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="PlayerTradeSlotGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3wv4p")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_hp76f")
+region_rect = Rect2(400, 16, 48, 48)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_elp7a")
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 58.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("3_3wv4p")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -7,7 +7,6 @@ z_index = -5
 script = ExtResource("1_jouy0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
